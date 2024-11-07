@@ -1,6 +1,7 @@
 package ykslyasin.h4cktools.api.controllers;
 
 import java.util.HashMap;
+
 import java.util.List;
 import java.util.Map;
 
@@ -18,28 +19,28 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import ykslyasin.h4cktools.business.abstracts.RingtoneService;
+import ykslyasin.h4cktools.business.abstracts.ToolsService;
 import ykslyasin.h4cktools.core.utilities.results.DataResult;
 import ykslyasin.h4cktools.core.utilities.results.ErrorDataResult;
 import ykslyasin.h4cktools.core.utilities.results.Result;
-import ykslyasin.h4cktools.entities.concretes.Ringtone;
+import ykslyasin.h4cktools.entities.concretes.Tools;
 
 @RestController
-@RequestMapping("/api/ringtones")
+@RequestMapping("/api/tools")
 @CrossOrigin
-public class RingtoneController {
+public class ToolsController {
 
-	private RingtoneService ringtoneService;
+	private ToolsService toolsService;
 	
 	@Autowired
-	public RingtoneController(RingtoneService ringtoneService) {
+	public ToolsController(ToolsService toolsService) {
 		super();
-		this.ringtoneService = ringtoneService;
+		this.toolsService = toolsService;
 	}
 
 	@GetMapping("/getall")
-	public DataResult<List<Ringtone>> getAll() {
-		return this.ringtoneService.getAll();
+	public DataResult<List<Tools>> getAll() {
+		return this.toolsService.getAll();
 	}
 	
 	/*@GetMapping("/getall")
@@ -48,21 +49,21 @@ public class RingtoneController {
 	}*/
 	
 	@PostMapping("/add")
-	public Result add(@RequestBody Ringtone ringtone) {
+	public Result add(@RequestBody Tools tools) {
 		
-		return this.ringtoneService.add(ringtone);
+		return this.toolsService.add(tools);
 	}
 	
-	@GetMapping("/getByRingtoneName")
-	public DataResult<Ringtone> getByRingtoneName(@RequestParam String ringtoneName){
+	@GetMapping("/getByToolName")
+	public DataResult<Tools> getByToolName(@RequestParam String toolName){
 		
-		return this.ringtoneService.getByRingtoneName(ringtoneName);
+		return this.toolsService.getByToolName(toolName);
 	}
 	
 	@GetMapping("/getById")
-	public DataResult<Ringtone> getById(@RequestParam int ringtoneId){
+	public DataResult<Tools> getById(@RequestParam int toolId){
 		
-		return this.ringtoneService.getById(ringtoneId);
+		return this.toolsService.getById(toolId);
 	}
 	
 	/*@GetMapping("/getByRingtoneCategory")

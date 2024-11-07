@@ -1,6 +1,7 @@
 package ykslyasin.h4cktools.api.controllers;
 
 import java.util.HashMap;
+
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ import ykslyasin.h4cktools.core.entities.Administrator;
 import ykslyasin.h4cktools.core.entities.User;
 import ykslyasin.h4cktools.core.utilities.results.ErrorDataResult;
 import ykslyasin.h4cktools.core.utilities.results.Result;
-import ykslyasin.h4cktools.entities.concretes.Ringtone;
+import ykslyasin.h4cktools.entities.concretes.Tools;
 
 @RestController
 @RequestMapping("/api/administrators")
@@ -41,10 +42,10 @@ public class AdministratorController {
 		return this.administratorService.add(administrator);
 	}
 	
-	@PostMapping("/addRingtone")
-	public Result add(@RequestBody Ringtone ringtone) {
+	@PostMapping("/addTool")
+	public Result add(@RequestBody Tools tools) {
 		
-		return this.administratorService.add(ringtone);
+		return this.administratorService.add(tools);
 	}
 	
 	@PostMapping("/addUser")

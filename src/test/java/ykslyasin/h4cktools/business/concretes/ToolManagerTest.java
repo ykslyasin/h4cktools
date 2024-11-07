@@ -1,6 +1,7 @@
 package ykslyasin.h4cktools.business.concretes;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -13,21 +14,20 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import ykslyasin.h4cktools.business.concretes.RingtoneManager;
+import ykslyasin.h4cktools.business.concretes.ToolsManager;
 import ykslyasin.h4cktools.core.utilities.results.DataResult;
 import ykslyasin.h4cktools.core.utilities.results.Result;
-import ykslyasin.h4cktools.dataAccess.RingtoneDao;
+import ykslyasin.h4cktools.dataAccess.ToolDao;
 import ykslyasin.h4cktools.entities.concretes.Categories;
-import ykslyasin.h4cktools.entities.concretes.Ringtone;
 
 @ExtendWith(MockitoExtension.class)
-class RingtoneManagerTest {
+class ToolManagerTest {
 
 	 	@Mock
-	    private RingtoneDao ringtoneDao;
+	    private ToolDao toolDao;
 
 	    @InjectMocks
-	    private RingtoneManager ringtoneManager;
+	    private ToolsManager toolsManager;
 /*
 	   @Test
 	    public void testAdd() {

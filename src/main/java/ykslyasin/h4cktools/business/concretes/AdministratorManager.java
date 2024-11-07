@@ -1,6 +1,7 @@
 package ykslyasin.h4cktools.business.concretes;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import ykslyasin.h4cktools.business.abstracts.AdministratorService;
@@ -10,21 +11,21 @@ import ykslyasin.h4cktools.core.entities.Administrator;
 import ykslyasin.h4cktools.core.entities.User;
 import ykslyasin.h4cktools.core.utilities.results.Result;
 import ykslyasin.h4cktools.core.utilities.results.SuccessResult;
-import ykslyasin.h4cktools.dataAccess.RingtoneDao;
-import ykslyasin.h4cktools.entities.concretes.Ringtone;
+import ykslyasin.h4cktools.dataAccess.ToolDao;
+import ykslyasin.h4cktools.entities.concretes.Tools;
 
 @Service
 public class AdministratorManager implements AdministratorService{
 
 	private AdministratorDao administratorDao;
-	private RingtoneDao ringtoneDao;
+	private ToolDao toolDao;
 	private UserDao userDao;
 	
 	@Autowired
-	public AdministratorManager(AdministratorDao administratorDao, RingtoneDao ringtoneDao, UserDao userDao) {
+	public AdministratorManager(AdministratorDao administratorDao, ToolDao toolDao, UserDao userDao) {
 		super();
 		this.administratorDao = administratorDao;
-		this.ringtoneDao = ringtoneDao;
+		this.toolDao = toolDao;
 		this.userDao = userDao;
 	}
 	
@@ -36,8 +37,8 @@ public class AdministratorManager implements AdministratorService{
 	}
 
 	@Override
-	public Result add(Ringtone ringtone) {
-		this.ringtoneDao.save(ringtone);
+	public Result add(Tools tools) {
+		this.toolDao.save(tools);
 		return new SuccessResult("Zil sesi eklendi.");
 	}
 

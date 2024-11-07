@@ -2,6 +2,7 @@ package ykslyasin.h4cktools.entities.concretes;
 
 import jakarta.persistence.Column;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,43 +18,28 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name="ringtones")
+@Table(name="tools")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Ringtone {
+public class Tools {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
-	private int ringtoneId;
+	private int toolId;
 	
 	@NotNull
 	@NotBlank
 	@Column(name="name")
-	private String ringtoneName;
-
-	@NotNull
-	@NotBlank
-	@Column(name="length")
-	private String ringtoneLength;
+	private String toolName;
 	
 	@ManyToOne
     @JoinColumn(name="category_id")
-    private Categories ringtoneCategory;
+    private Categories toolCategory;
 	
 	@NotNull
 	@NotBlank
-	@Column(name="format_type")
-	private String ringtoneFormat;
-	
-	@NotNull
-	@NotBlank
-	@Column(name="price")
-	private double ringtonePrice;
-	
-	@NotNull
-	@NotBlank
-	@Column(name="ringtone_path")
-	private String ringtonePath;
+	@Column(name="tool_path")
+	private String toolPath;
 	
 }
