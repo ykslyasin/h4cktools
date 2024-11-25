@@ -2,6 +2,7 @@ package ykslyasin.h4cktools.business.concretes;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+
 import org.springframework.stereotype.Service;
 
 import ykslyasin.h4cktools.business.abstracts.AdministratorService;
@@ -11,21 +12,21 @@ import ykslyasin.h4cktools.core.entities.Administrator;
 import ykslyasin.h4cktools.core.entities.User;
 import ykslyasin.h4cktools.core.utilities.results.Result;
 import ykslyasin.h4cktools.core.utilities.results.SuccessResult;
-import ykslyasin.h4cktools.dataAccess.ToolDao;
+import ykslyasin.h4cktools.dataAccess.ToolsDao;
 import ykslyasin.h4cktools.entities.concretes.Tools;
 
 @Service
 public class AdministratorManager implements AdministratorService{
 
 	private AdministratorDao administratorDao;
-	private ToolDao toolDao;
+	private ToolsDao toolsDao;
 	private UserDao userDao;
 	
 	@Autowired
-	public AdministratorManager(AdministratorDao administratorDao, ToolDao toolDao, UserDao userDao) {
+	public AdministratorManager(AdministratorDao administratorDao, ToolsDao toolsDao, UserDao userDao) {
 		super();
 		this.administratorDao = administratorDao;
-		this.toolDao = toolDao;
+		this.toolsDao = toolsDao;
 		this.userDao = userDao;
 	}
 	
@@ -38,7 +39,7 @@ public class AdministratorManager implements AdministratorService{
 
 	@Override
 	public Result add(Tools tools) {
-		this.toolDao.save(tools);
+		this.toolsDao.save(tools);
 		return new SuccessResult("Zil sesi eklendi.");
 	}
 

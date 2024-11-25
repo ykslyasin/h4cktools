@@ -2,6 +2,7 @@ package ykslyasin.h4cktools.business.concretes;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -17,14 +18,14 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import ykslyasin.h4cktools.business.concretes.ToolsManager;
 import ykslyasin.h4cktools.core.utilities.results.DataResult;
 import ykslyasin.h4cktools.core.utilities.results.Result;
-import ykslyasin.h4cktools.dataAccess.ToolDao;
+import ykslyasin.h4cktools.dataAccess.ToolsDao;
 import ykslyasin.h4cktools.entities.concretes.Categories;
 
 @ExtendWith(MockitoExtension.class)
 class ToolManagerTest {
 
 	 	@Mock
-	    private ToolDao toolDao;
+	    private ToolsDao toolsDao;
 
 	    @InjectMocks
 	    private ToolsManager toolsManager;

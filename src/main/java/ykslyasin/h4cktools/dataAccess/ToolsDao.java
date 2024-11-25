@@ -7,7 +7,7 @@ import ykslyasin.h4cktools.entities.concretes.Categories;
 import ykslyasin.h4cktools.entities.concretes.Tools;
 
 
-public interface ToolDao extends JpaRepository<Tools, Integer>{
+public interface ToolsDao extends JpaRepository<Tools, Integer>{
 
 	Tools getByToolName(String toolName);
 	
