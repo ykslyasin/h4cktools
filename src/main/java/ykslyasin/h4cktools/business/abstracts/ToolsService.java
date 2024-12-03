@@ -17,7 +17,7 @@ public interface ToolsService {
 	
 	DataResult<Tools> getByToolName(String toolName);
 	
-	DataResult<Tools> getById(int toolId);
+	DataResult<Tools> getByToolId(int toolId);
 	
 	DataResult<Tools> getByToolCategory(Categories toolCategory);
 	

@@ -13,5 +13,5 @@ public interface ToolsDao extends JpaRepository<Tools, Integer>{
 	
 	Tools getByToolCategory(Categories toolCategory);
 	
-	Tools getById(int toolId);
+	Tools getByToolId(int toolId);
 }

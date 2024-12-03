@@ -33,14 +33,14 @@ class ToolManagerTest {
 	   @Test
 	    public void testAdd() {
 
-		    Categories ringtoneCategory = new Categories(1, "Animals");
-	        Ringtone ringtoneToAdd = new Ringtone(1, "birds1", "0:15", ringtoneCategory, "mp3", 4.99, "yasin");
+		    Categories toolCategory = new Categories(1, "Animals");
+	        Tools toolToAdd = new Tools(1, "birds1", "0:15", toolCategory, "mp3", 4.99, "yasin");
 
 
-	        when(ringtoneDao.save(any(Ringtone.class))).thenReturn(ringtoneToAdd);
+	        when(toolsDao.save(any(Tools.class))).thenReturn(toolToAdd);
 
 
-	        Result result = ringtoneManager.add(ringtoneToAdd);
+	        Result result = toolsManager.add(toolToAdd);
 
 
 	        assertEquals(true, result.isSuccess());
@@ -49,70 +49,70 @@ class ToolManagerTest {
 	    @Test
 	    public void testGetAll() {
 
-	        List<Ringtone> mockRingtones = new ArrayList<>();
-	        Categories ringtoneCategory = new Categories(1, "Animals");
-	        mockRingtones.add(new Ringtone(1, "birds1", "0:15", ringtoneCategory, "mp3", 4.99, "yasin"));
+	        List<Tools> mockTools = new ArrayList<>();
+	        Categories toolCategory = new Categories(1, "Animals");
+	        mockTools.add(new Tools(1, "birds1", "0:15", toolCategory, "mp3", 4.99, "yasin"));
 
 
-	        when(ringtoneDao.findAll()).thenReturn(mockRingtones);
+	        when(toolsDao.findAll()).thenReturn(mockTools);
 
 
-	        DataResult<List<Ringtone>> result = ringtoneManager.getAll();
+	        DataResult<List<Tools>> result = toolsManager.getAll();
 
 
-	        assertEquals(mockRingtones.size(), result.getData().size());
+	        assertEquals(mockTools.size(), result.getData().size());
 	    }
 	
 	    @Test
-	    public void testGetRingtoneByRingtoneName() {
+	    public void testGetToolsByToolsName() {
 	    	
-	        String ringtoneName = "TestRingtoneName";
-	        Categories ringtoneCategory = new Categories(1, "Animals");
-	        Ringtone mockRingtone = new Ringtone(1, "birds1", "0:15", ringtoneCategory, "mp3", 4.99, "yasin");
+	        String toolName = "TestToolName";
+	        Categories ToolsCategory = new Categories(1, "Animals");
+	        Tools mockTools = new Tools(1, "birds1", "0:15", toolCategory, "mp3", 4.99, "yasin");
 
 
-	        when(ringtoneDao.getByRingtoneName(ringtoneName)).thenReturn(mockRingtone);
+	        when(toolsDao.getByToolName(toolName)).thenReturn(mockTools);
 
 
-	        DataResult<Ringtone> result = ringtoneManager.getByRingtoneName(ringtoneName);
+	        DataResult<Tools> result = toolsManager.getByToolName(toolName);
 
 	        
-	        assertEquals(mockRingtone, result.getData());
+	        assertEquals(mockTools, result.getData());
 
 	    }
 	    
 	   @Test
-	    public void testGetRingtoneByRingtoneCategory() {
+	    public void testGetRingtoneByToolsCategory() {
 	    	
-	        Categories ringtoneCategory = new Categories(1, "Animals");
-	        Ringtone mockRingtone = new Ringtone(1, "birds1", "0:15", ringtoneCategory, "mp3", 4.99, "yasin");
+	        Categories toolCategory = new Categories(1, "Animals");
+	        Tools mockTools = new Tools(1, "birds1", "0:15", toolCategory, "mp3", 4.99, "yasin");
 
 
-	        when(ringtoneDao.getByRingtoneCategory(ringtoneCategory)).thenReturn(mockRingtone);
+	        when(toolsDao.getByToolsCategory(toolCategory)).thenReturn(mockTools);
 
 
-	        DataResult<Ringtone> result = ringtoneManager.getByRingtoneCategory(ringtoneCategory);
+	        DataResult<Tools> result = toolsManager.getByToolCategory(toolCategory);
 
 	        
-	        assertEquals(mockRingtone, result.getData());
+	        assertEquals(mockTools, result.getData());
 
 	    }
 	    
 	    @Test
-	    public void testGetRingtoneById() {
+	    public void testGetToolsById() {
 	    	
 	        int ringtoneId = 5;
-	        Categories ringtoneCategory = new Categories(1, "Animals");
-	        Ringtone mockRingtone = new Ringtone(1, "birds1", "0:15", ringtoneCategory, "mp3", 4.99, "yasin");
+	        Categories toolCategory = new Categories(1, "Animals");
+	        Tools mockTools = new Tools(1, "birds1", "0:15", toolCategory, "mp3", 4.99, "yasin");
 
 
-	        when(ringtoneDao.getById(ringtoneId)).thenReturn(mockRingtone);
+	        when(toolsDao.getById(toolId)).thenReturn(mockTools);
 
 
-	        DataResult<Ringtone> result = ringtoneManager.getById(ringtoneId);
+	        DataResult<Tools> result = toolsManager.getById(toolId);
 
 	        
-	        assertEquals(mockRingtone, result.getData());
+	        assertEquals(mockTools, result.getData());
 
 	    }
 */

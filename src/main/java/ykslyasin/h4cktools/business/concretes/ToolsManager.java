@@ -38,7 +38,7 @@ public class ToolsManager implements ToolsService{
 	@Override
 	public Result add(Tools tools) {
 		this.toolsDao.save(tools);
-		return new SuccessResult("Zil sesi eklendi.");
+		return new SuccessResult("Tool eklendi.");
 	}
 
 	@Override
@@ -49,9 +49,9 @@ public class ToolsManager implements ToolsService{
 	}
 
 	@Override
-	public DataResult<Tools> getById(int toolId) {
+	public DataResult<Tools> getByToolId(int toolId) {
 		return new SuccessDataResult<Tools>
-		(this.toolsDao.getById(toolId), "Data getirildi.");
+		(this.toolsDao.getByToolId(toolId), "Data getirildi.");
 	}
 
 	@Override
@@ -62,8 +62,8 @@ public class ToolsManager implements ToolsService{
 	}
 
 	/*@Override
-	public List<Ringtone> getAll() {
-		return this.ringtoneDao.findAll();
+	public List<Tools> getAll() {
+		return this.toolsDao.findAll();
 	}*/
 
 

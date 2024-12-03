@@ -61,9 +61,9 @@ public class ToolsController {
 	}
 	
 	@GetMapping("/getById")
-	public DataResult<Tools> getById(@RequestParam int toolId){
+	public DataResult<Tools> getByToolId(@RequestParam int toolId){
 		
-		return this.toolsService.getById(toolId);
+		return this.toolsService.getByToolId(toolId);
 	}
 	
 	/*@GetMapping("/getByRingtoneCategory")
