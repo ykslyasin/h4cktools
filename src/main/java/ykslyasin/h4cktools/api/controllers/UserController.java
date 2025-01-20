@@ -1,8 +1,10 @@
 package ykslyasin.h4cktools.api.controllers;
 
 import java.util.HashMap;
+import ykslyasin.h4cktools.entities.concretes.FavoriteTools;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -72,6 +75,11 @@ public class UserController {
 		
 		return this.userService.loginAuth(username, password);
 	}
+	
+  /*  @GetMapping("/{userId}/favorites")
+    public Set<FavoriteTools> getFavoriteToolsByUserId(@PathVariable int userId) {
+        return userService.getFavoriteToolsById(userId);
+    }*/
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)

@@ -27,7 +27,7 @@ import ykslyasin.h4cktools.entities.concretes.Tools;
 
 @RestController
 @RequestMapping("/api/tools")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000")
 public class ToolsController {
 
 	private ToolsService toolsService;

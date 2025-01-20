@@ -1,9 +1,10 @@
 package ykslyasin.h4cktools.business.concretes;
 
 
+import java.util.HashSet;
 import java.util.List;
-
-
+import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,7 @@ import ykslyasin.h4cktools.core.utilities.results.ErrorResult;
 import ykslyasin.h4cktools.core.utilities.results.Result;
 import ykslyasin.h4cktools.core.utilities.results.SuccessDataResult;
 import ykslyasin.h4cktools.core.utilities.results.SuccessResult;
+import ykslyasin.h4cktools.entities.concretes.FavoriteTools;
 
 
 
@@ -106,9 +108,20 @@ public class UserManager implements UserService{
 
 	@Override
 	public Result registration(User user) {
-		// TODO Auto-generated method stub
-		return null;
+        User existingUser = userDao.getByEmail(user.getEmail());
+
+        if (existingUser != null) {
+            return new ErrorResult("Bu mail zaten kayıtlı.");
+        } else {
+            add(user);
+            return new SuccessResult("Başarıyla kayıt olundu.");
+        }
 	}
+
+	/*@Override
+	public Set getFavoriteToolsById(int userId) {
+
+	}*/
 	
 	
 	

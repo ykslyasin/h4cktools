@@ -3,6 +3,7 @@ package ykslyasin.h4cktools.business.concretes;
 import static org.junit.jupiter.api.Assertions.*;
 
 
+
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ class UserManagerTest {
 	
 	@InjectMocks
 	UserManager userManager = new UserManager(userDao);
-	/*
+	
 	@Test
 	public void testGetAllUser() {
 		
@@ -89,5 +90,4 @@ class UserManagerTest {
         assertEquals("Başarıyla kayıt olundu.", ((SuccessResult) result).getMessage());
     }
 
-*/
 }
